@@ -1,7 +1,8 @@
 tipoProblema = menu("Qual será o tipo de problema a ser resolvido?",
-              "Forças na Viga",
-              "Carregamento Distribuído",
-              "Esforços Solicitantes");
+              "1.Forças na Viga",
+              "2.Carregamento Distribuído",
+              "3.Esforços Solicitantes",
+              "4.Instruções");
 
               
 # Forças na Viga
@@ -18,4 +19,9 @@ endif
 #Forças Solicitantes
 if tipoProblema == 3
   problema3();
+endif
+
+#Instruções
+if tipoProblema == 4
+  instrucoes();
 endif
