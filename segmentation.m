@@ -9,3 +9,4 @@ function [positions] = segmentation(vetor_pos_forcas, vetor_pos_apoios)
   endwhile
   
 endfunction
+
