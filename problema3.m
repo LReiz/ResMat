@@ -1,8 +1,5 @@
 function problema3()
-  opcaoApoios = menu("Qual será o tipo de problema?", 
-          "1 Apoio Engastado", 
-          "1 Apoio Pino e 1 Apoio Rolete",
-          "2 Apoios Roletes");
+  opcaoApoios = opcaoApoios();
           
 
   # Posição dos Apoios
@@ -45,15 +42,18 @@ function problema3()
     fyApoioRolete2 = str2num(inputdlg("Força Y Apoio Rolete 2:", "FY Apoio Rolete 2"){1});
   endif
   
-  #Forças Externas Y na Viga
-  forcasExternasY = [];
-  vetorPosicaoForcas = [];
-  index = 0;
-  botaoComando = ''
-  while (!strcmp(botaoComando, "Não"))
-    index += 1;
-    forcasExternasY(index) = str2num(inputdlg("Valor da Força em Y (em N):\n", "Força"){1});
-    vetorPosicaoForcas(index) = str2num(inputdlg("Posição da Força em Y (em metros):\n", "Posição da Força Y"){1});
-    botaoComando = questdlg( 'Quer adicionar mais torques em X?', 'Torques em X', 'Sim', 'Não', 'Não');
-  endwhile
+  #Forças Externas
+  [vetorForcas, vetorAngulosForcas, vetorPosicaoForcas] = problema1InputForcas();
+  
+  #Torque Externos
+  [vetorTorques] = problema1InputTorques();
+  
+  #Ordenar Forças Externas pela Posição
+  [vetorForcas, vetorAngulosForcas, vetorPosicaoForcas] = ordenacaoForcas(vetorForcas, vetorAngulosForcas,vetorPosicaoForcas);
+  
+  #Achar Posição dos Cortes Virtuais
+  [posicaoCortes] = segmentation(vetorPosicaoForcas, vetorPosicaoApoios);
+  
+  #Inserir Forças de Apoio
+  
 endfunction

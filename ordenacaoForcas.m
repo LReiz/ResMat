@@ -1,4 +1,4 @@
-function [vetorForcaOndenado, vetorAnguloOrdenado, vetorPosicaoOrdenado] = ordenandoVetores(vetorForcas, vetorAngulo,vetorPosicao)
+function [vetorForcaOndenado, vetorAnguloOrdenado, vetorPosicaoOrdenado] = ordenacaoForcas(vetorForcas, vetorAngulo,vetorPosicao)
   j = 1;
   while(j <= length(vetorPosicao))
     menor = 1000;
