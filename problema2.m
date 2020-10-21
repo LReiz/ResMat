@@ -42,7 +42,7 @@ function problema2()
   vetor_270=270*ones(1,aux);
   vetorAngulosForcas=[vetorAngulosForcas,vetor_270]; #concatenando o angulo das forças
   
-  resolvendoApoio(opcaoApoios, vetorForcas, vetorAngulosForcas, vetorPosicaoForcas, vetorTorques, vetorPosicaoApoios)
+  resolvendoApoio(opcaoApoios, vetorForcas, vetorAngulosForcas, vetorPosicaoForcas, vetorTorques, vetorPosicaoApoios) #função que printa os resultados do programa
   
   
 endfunction

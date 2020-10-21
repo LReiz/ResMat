@@ -1,4 +1,4 @@
-function [vetorForcasApoiosGeral] = resolvendoApoio(opcaoApoios, vetorForcas, vetorAngulosForcas, vetorPosicaoForcas, vetorTorques, vetorPosicaoApoios)
+function resolvendoApoio(opcaoApoios, vetorForcas, vetorAngulosForcas, vetorPosicaoForcas, vetorTorques, vetorPosicaoApoios)
  
   vetorForcasX = [];
   vetorForcasY = [];
@@ -14,8 +14,6 @@ function [vetorForcasApoiosGeral] = resolvendoApoio(opcaoApoios, vetorForcas, ve
   vetorAngulosForcas
   somatorio_em_Y
 
-  # fxe, fye, me, te,             fxp, fyp, tp,            fyr, fyr1, fyr2
-  vetorForcasApoiosGeral = [0,0,0,0,0,0,0,0]
  
  if opcaoApoios == 1 #apoio Engastado
     Y = [-1*somatorio_em_Y;-1*somatorio_momentos];
@@ -27,8 +25,6 @@ function [vetorForcasApoiosGeral] = resolvendoApoio(opcaoApoios, vetorForcas, ve
     printf("Reação em X: %d\n", reacao_em_X);
     reacao_torques = -somatorio_torques;
     printf("Reação torque: %d\n", reacao_torques);
-    
-    
   endif
   if opcaoApoios == 2#apoio 1 pino e 1 rolete 
     Y = [-1*somatorio_em_Y;-1*somatorio_momentos];
@@ -40,8 +36,6 @@ function [vetorForcasApoiosGeral] = resolvendoApoio(opcaoApoios, vetorForcas, ve
     printf("Reação em x apoio pino: %d\n", reacao_em_X);
     reacao_torques = -somatorio_torques;
     printf("Reação torque apoio pino: %d\n", reacao_torques);
-    
-    
   endif
   if opcaoApoios == 3
      Y = [-1*somatorio_em_Y;-1*somatorio_momentos];
@@ -50,6 +44,5 @@ function [vetorForcasApoiosGeral] = resolvendoApoio(opcaoApoios, vetorForcas, ve
      printf("Reação em y apoio rolete A: %d\n", X(1));
      printf("Reação em y apoio rolete B: %d\n", X(2));
 
-     
   endif
 endfunction
